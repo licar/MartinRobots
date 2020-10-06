@@ -4,6 +4,6 @@ namespace Model.Coordinators
 {
     public interface ICoordinator
     {
-        void Run(IRobot[] Robots);
+        void LaunchRobots(IRobot[] Robots);
     }
 }

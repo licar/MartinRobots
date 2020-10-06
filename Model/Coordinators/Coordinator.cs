@@ -4,7 +4,7 @@ namespace Model.Coordinators
 {
     public class Coordinator : ICoordinator
     {
-        public void Run(IRobot[] Robots)
+        public void LaunchRobots(IRobot[] Robots)
         {
             foreach(var robot in Robots)
             {
