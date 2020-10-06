@@ -13,5 +13,6 @@ List of assumptions :
   Coordinator - launches robots
 10) Rotation - should happen by coordinates that is why directions must be able to mapping via coordinates. For quick mapping better to use dictionary
 11) Movement - shuld use coordinates of directions
+12) Required validate coordinates that is why better to do it at the input stage
 
 Estimation : two working days 
