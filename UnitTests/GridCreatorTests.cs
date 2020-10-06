@@ -17,9 +17,7 @@ namespace UnitTests
         public void CreateGridWithOneElement()
         {
             int x = 1, y = 1;          
-
-            var grid = gridCreator.Create(x, y) as Grid;
-
+            var grid = gridCreator.Create(x, y) as Grid
             Assert.That(grid.Cells.Length, Is.EqualTo(y + 1));
             Assert.That(grid.Cells[0].Length, Is.EqualTo(x + 1));
         }

@@ -1,7 +1,12 @@
-﻿namespace ViewModel.Models
+﻿using Core.Enums;
+
+namespace ViewModel.Models
 {
-    public class OutpubRobotDto
+    public class OutputRobotDto
     {
-        public InputRobotStateDto State { get; set; }
+        public int PositionX { get; set; }
+        public int PositionY { get; set; }
+        public Direction Direction { get; set; }
+        public bool Fell { get; set; } = false;
     }
 }
