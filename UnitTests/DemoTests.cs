@@ -29,6 +29,24 @@ namespace UnitTests
                 new Robot(0, 3, Direction.W.GetDirectionDescription(), new[] { Command.L, Command.L, Command.F, Command.F, Command.F, Command.L, Command.F, Command.L, Command.F, Command.L }, grid)
             };
             coordinator.Run(robots);
+
+            var firstRobot = robots[0];
+            Assert.That(firstRobot.PositionX, Is.EqualTo(1));
+            Assert.That(firstRobot.PositionY, Is.EqualTo(1));
+            Assert.That(firstRobot.Direction, Is.EqualTo(Direction.E.GetDirectionDescription()));
+            Assert.IsFalse(firstRobot.Fell);
+
+            var secondRobot = robots[1];
+            Assert.That(secondRobot.PositionX, Is.EqualTo(3));
+            Assert.That(secondRobot.PositionY, Is.EqualTo(3));
+            Assert.That(secondRobot.Direction, Is.EqualTo(Direction.N.GetDirectionDescription()));
+            Assert.IsTrue(secondRobot.Fell);
+
+            var thirdRobot = robots[2];
+            Assert.That(thirdRobot.PositionX, Is.EqualTo(2));
+            Assert.That(thirdRobot.PositionY, Is.EqualTo(3));
+            Assert.That(thirdRobot.Direction, Is.EqualTo(Direction.S.GetDirectionDescription()));
+            Assert.IsFalse(thirdRobot.Fell);
         }
     }
 }
