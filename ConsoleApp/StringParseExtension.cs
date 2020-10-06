@@ -10,15 +10,16 @@ namespace ConsoleApp
     {
         public static (int x, int y) GetGridCoordinates(this string input)
         {
-            var coordinates = input.Split(' ');
+            var coordinates = input.Split(' ').Select(c => int.Parse(c)).ToArray();
             if (coordinates.Length != 2) throw new Exception("Invalid coordinates input");
-            return (int.Parse(coordinates[0]), int.Parse(coordinates[1]));
+            return (coordinates[0], coordinates[1]);
         }
 
         public static InputRobotStateDto GetState(this string input)
         {
             var statements = input.Split(' ');
             if (statements.Length != 3) throw new Exception("Invalid positions input");
+
             return new InputRobotStateDto {
                 PositionX = int.Parse(statements[0]),
                 PositionY = int.Parse(statements[1]),
